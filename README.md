@@ -52,3 +52,12 @@ const SuperComponent = () => {
 }
 
 ```
+
+## Api
+
+
+| Props  | Default | | Description |
+| --- | --- | --- |
+| content | null | It can be a primite or a render function |
+| delay | 0 | `number`: expressed in seconds of the delay after mouse over/out for the tooltip to appear |
+| duration | 0.1 | `number`: seconds of the animation duration |
