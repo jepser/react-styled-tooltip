@@ -2,6 +2,7 @@ import React, { useState, ReactNode, ReactElement } from 'react'
 
 import { Root, Wrapper } from './styled-components'
 import { TooltipProps } from '../../types'
+import { isFunction } from '../../lib/helpers'
 
 const Tooltip = ({ content, children }: TooltipProps): ReactElement => {
   const [isVisible, setVisibility] = useState(false)
@@ -15,7 +16,7 @@ const Tooltip = ({ content, children }: TooltipProps): ReactElement => {
   }
 
   const renderContent = (): ReactNode => {
-    return content
+    return isFunction(content) ? content({ isVisible }) : content
   }
 
   return (
