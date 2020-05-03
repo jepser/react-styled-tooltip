@@ -55,8 +55,7 @@ const SuperComponent = () => {
 
 ## Api
 
-
-| Props  | Default | | Description |
+| Props | Default | | Description |
 | --- | --- | --- |
 | content | null | It can be a primite or a render function |
 | delay | 0 | `number`: expressed in seconds of the delay after mouse over/out for the tooltip to appear |
