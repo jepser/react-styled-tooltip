@@ -18,6 +18,7 @@ export const Wrapper = styled.div`
   transform: translateX(-50%);
   left: 50%;
   bottom: 100%;
-  transition: opacity .1s ease;
+  transition: opacity ${(props: WrapperProps): number => props.duration || 0}s ease;
+  transition-delay: ${(props: WrapperProps): number => props.delay || 0}s;
   opacity: ${(props: WrapperProps): number => props.isVisible ? 1 : 0};
 `

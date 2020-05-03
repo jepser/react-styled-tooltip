@@ -2,7 +2,6 @@ import React, { ReactElement, ReactNode } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Tooltip from './'
-import { WrapperProps } from '../../types'
 
 const Wrapper = ({ children }: { children: ReactNode }): ReactElement => {
   return (
@@ -20,9 +19,9 @@ const DefaultBehaviour = (): ReactElement => {
   )
 }
 
-const CustomToolTip = ({ isVisible }: WrapperProps): ReactElement => {
+const CustomToolTip = (): ReactElement => {
   return (
-    <div style={{ display: isVisible ? 'block' : 'none' }}>
+    <div>
       <h4 style={{ margin: 0 }}>I am custom content</h4>
       <p style={{ margin: 0 }}>With a lot of content</p>
     </div>

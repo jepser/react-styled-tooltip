@@ -4,7 +4,7 @@ import { Root, Wrapper } from './styled-components'
 import { TooltipProps } from '../../types'
 import { isFunction } from '../../lib/helpers'
 
-const Tooltip = ({ content, children }: TooltipProps): ReactElement => {
+const Tooltip = ({ content, children, delay = 0, duration = 0.1 }: TooltipProps): ReactElement => {
   const [isVisible, setVisibility] = useState(false)
 
   const handleMouseEnter = (): void => {
@@ -22,7 +22,7 @@ const Tooltip = ({ content, children }: TooltipProps): ReactElement => {
   return (
     <Root onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       {children}
-      <Wrapper isVisible={isVisible}>{renderContent()}</Wrapper>
+      <Wrapper delay={delay} duration={duration} isVisible={isVisible}>{renderContent()}</Wrapper>
     </Root>
   )
 }
