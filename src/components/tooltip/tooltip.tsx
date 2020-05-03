@@ -1,11 +1,7 @@
 import React, { useState, ReactNode, ReactElement } from 'react'
 
 import { Root, Wrapper } from './styled-components'
-
-type TooltipProps = {
-  children: ReactNode;
-  content: ReactNode;
-}
+import { TooltipProps } from '../../types'
 
 const Tooltip = ({ content, children }: TooltipProps): ReactElement => {
   const [isVisible, setVisibility] = useState(false)
@@ -25,9 +21,7 @@ const Tooltip = ({ content, children }: TooltipProps): ReactElement => {
   return (
     <Root onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       {children}
-      {isVisible && (
-        <Wrapper isVisible>{renderContent()}</Wrapper>
-      )}
+      <Wrapper isVisible={isVisible}>{renderContent()}</Wrapper>
     </Root>
   )
 }

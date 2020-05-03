@@ -1,15 +1,11 @@
 import styled, { css } from 'styled-components'
+import { WrapperProps } from '../../types'
 
 const defaultTooltipStyles = css`
-  position: absolute;
-  transform: translateX(-50%);
   min-width: 200px;
   max-width: 440px;
-  left: 50%;
-  bottom: 100%;
   text-align: center;
   padding: 8px;
-  transition: opacity .2s ease;
 `
 
 export const Root = styled.span`
@@ -17,5 +13,11 @@ export const Root = styled.span`
 `
 
 export const Wrapper = styled.div`
-  ${defaultTooltipStyles}
+  ${defaultTooltipStyles};
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 100%;
+  transition: opacity .1s ease;
+  opacity: ${(props: WrapperProps): number => props.isVisible ? 1 : 0};
 `
